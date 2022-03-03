@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+    <constant name="struts.devMode" value="true"/>
+    
+    <package name="default" extends="struts-default" namespace="/">
+        
+    <result-types>
+      <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+    </result-types>
+        
+        <action name="Register" class="hotel.res.action.RegisterAction">
+            <result name="SUCCESS">login.jsp</result>
+            <result name="input">index.jsp</result>
+            <result name="ERROR">/error.jsp</result>
+        </action>
+        
+        <action name="loginprocess" class="hotel.res.action.LoginServer">  
+            <result name="ADMIN" type="tiles">admin-success</result> 
+            <result name="HOTEL" type="tiles">hotel-success</result> 
+            <result name="USER" type="tiles">in-success</result> 
+            <result name="ERROR" >loginerror.jsp</result>  
+        </action>  
+
+        <action name="addhotel" class="hotel.res.action.AddHotel">  
+            <result name="SUCCESS" type="tiles" >admin-success</result>  
+            <result name="input">addhotel.jsp</result>
+            <result name="ERROR" >hotelerror.jsp</result>  
+        </action> 
+        
+        <action name="FetchRecords" class="hotel.res.action.FetchDataAction" method="execute">  
+            <result name="SUCCESS">hotels.jsp</result>  
+              
+        </action> 
+        
+        <action name="modifyHotel" class="hotel.res.action.ModifyHotel">  
+            <result name="SUCCESS" type="tiles">admin-success</result>  
+            <result name="input" type="tiles">modifyHotel</result>
+            <result name="ERROR" >hotelerror.jsp</result>  
+        </action> 
+
+        <action name="getHotel" class="hotel.res.action.GetHotel">  
+            <result name="SUCCESS" type="tiles">modifyHotel</result>      
+            <result name="ERROR" >hotelerror.jsp</result>  
+        </action> 
+
+        <action name="removeHotel" class="hotel.res.action.RemoveHotel">  
+            <result name="SUCCESS" type="tiles" >admin-success</result>  
+            <result name="ERROR" type="tiles">admin-success</result>  
+        </action> 
+
+        <action name="addRoom" class="hotel.res.action.AddRoom">  
+            <result name="SUCCESS" type="tiles" >hotel-success</result> 
+            <result name="input">addRoom.jsp</result> 
+            <result name="ERROR" >roomerror.jsp</result>  
+        </action> 
+        
+        <action name="FetchRooms" class="hotel.res.action.FetchRoomAction" method="execute">  
+            <result name="SUCCESS">hotelRooms.jsp</result>  
+              
+        </action> 
+        
+        <action name="getRoom" class="hotel.res.action.GetRoom">  
+            <result name="SUCCESS" type="tiles" >modifyRoom</result>  
+            <result name="ERROR" >hotelerror.jsp</result>  
+        </action>
+        
+        <action name="modifyRoom" class="hotel.res.action.ModifyRoom">  
+            <result name="SUCCESS" type="tiles">hotel-success</result>  
+            <result name="input" type="tiles">modifyRoom</result>
+            <result name="ERROR" >hotelerror.jsp</result>  
+        </action>
+        
+        <action name="removeRoom" class="hotel.res.action.RemoveRoom">  
+            <result name="SUCCESS" type="tiles" >hotel-success</result>  
+            <result name="ERROR" >hotelerror.jsp</result>  
+        </action>  
+ 
+        <action name="FetchCor" class="hotel.res.action.FetchCorAction" method="execute">  
+            <result name="SUCCESS">map.jsp</result>  
+              
+        </action>  
+    
+        <action name="getHotelBook" class="hotel.res.action.GetHotelBook">  
+            <result name="SUCCESS" type="tiles">getHotelBook</result>    
+            <result name="success">roomBook.jsp</result>             
+        </action>     
+        
+        <action name="getRooms" class="hotel.res.action.FetchRoomsAction" method="execute">  
+            <result name="SUCCESS">rooms.jsp</result>                
+        </action>     
+        
+        <action name="addRoomBook" class="hotel.res.action.AddRoomBook">  
+            <result name="SUCCESS">book.jsp</result>                
+        </action>  
+        
+        <action name="getAddedRooms" class="hotel.res.action.GetAddedRooms">  
+            <result name="SUCCESS">roomsAdded.jsp</result>                
+        </action>   
+        
+        <action name="removeRoomBook" class="hotel.res.action.RemoveRoomBook">  
+            <result name="SUCCESS">roomsAdded.jsp</result>                
+        </action>  
+        
+        <action name="bookRoom" class="hotel.res.action.RoomBook">  
+            <result name="SUCCESS" type="tiles">getRoomBook</result>                
+        </action>    
+        
+        <action name="booked" class="hotel.res.action.BookRoom">  
+            <result name="SUCCESS" type="tiles">in-success</result>  
+            <result name="ERROR">error.jsp</result>
+            <result name="input" type="tiles">getRoomBook</result>                 
+        </action>      
+
+        <action name="goLobby" class="hotel.res.action.GoLobby">  
+            <result name="SUCCESS" type="tiles">lobby</result>  
+            <result name="ERROR">error.jsp</result>               
+        </action>
+        
+        <action name="fetchBookedRooms" class="hotel.res.action.FetchBookedRooms" method="execute">  
+            <result name="SUCCESS">bookedRooms.jsp</result>  
+            <result name="ERROR">error.jsp</result>               
+        </action>   
+        
+        <action name="checkin" class="hotel.res.action.CheckIn">  
+            <result name="SUCCESS" type="tiles">lobby</result>  
+            <result name="ERROR">error.jsp</result>               
+        </action> 
+        
+        <action name="fetchLeavingRooms" class="hotel.res.action.FetchLeavingAction" method="execute">  
+            <result name="SUCCESS">leavingRooms.jsp</result>  
+            <result name="ERROR">error.jsp</result>               
+        </action> 
+        
+         <action name="checkout" class="hotel.res.action.CheckOut">  
+            <result name="SUCCESS" type="tiles">lobby</result>  
+            <result name="ERROR">error.jsp</result>               
+        </action>                                                       
+                   
+        <action name="getProfile" class="hotel.res.action.GetProfile">  
+            <result name="SUCCESS" type="tiles" >getProfile</result>  
+            <result name="ERROR" >hotelerror.jsp</result>  
+        </action> 
+        
+        <action name="modifyProfile" class="hotel.res.action.UpdateProfile">  
+            <result name="SUCCESS" type="tiles" >in-success</result>  
+            <result name="input" type="tiles" >getProfile</result> 
+            <result name="ERROR" >hotelerror.jsp</result>  
+        </action>
+        
+        <action name="hotelHome" class="hotel.res.action.HotelHome">  
+            <result name="SUCCESS" type="tiles" >hotel-success</result>   
+        </action>
+        
+        <action name="userHome" class="hotel.res.action.UserHome">  
+            <result name="SUCCESS" type="tiles" >in-success</result>   
+        </action>
+        
+        <action name="adminHome" class="hotel.res.action.AdminHome">  
+            <result name="SUCCESS" type="tiles" >admin-success</result>   
+        </action>
+        
+        <action name="logout" class="hotel.res.action.LogOut">  
+            <result name="SUCCESS">login.jsp</result>   
+        </action>
+    </package>
+    
+</struts>

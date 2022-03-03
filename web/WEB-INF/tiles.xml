@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+      
+    <!DOCTYPE tiles-definitions PUBLIC   
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+     "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">   
+      
+    <tiles-definitions>  
+        
+   <definition name="in-success" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Welcome Page"/>   
+    <put-attribute name="body" value="/userHome.jsp"/> 
+    <put-attribute name="header" value="/userNav.jsp"/>   
+   </definition>    
+   
+   <definition name="updateProfile" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Update Profile"/>   
+    <put-attribute name="body" value="/userProfile.jsp"/> 
+    <put-attribute name="header" value="/userNav.jsp"/>   
+   </definition> 
+   
+   <definition name="admin-success" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Welcome Page"/>   
+    <put-attribute name="body" value="/admin.jsp"/> 
+    <put-attribute name="header" value="/adminNav.jsp"/>   
+   </definition> 
+
+   <definition name="modifyHotel" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Modify Hotel"/>   
+    <put-attribute name="body" value="/modifyHotel.jsp"/> 
+    <put-attribute name="header" value="/adminNav.jsp"/>   
+   </definition>  
+   
+   <definition name="hotel-success" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Hotel Home"/>   
+    <put-attribute name="body" value="/hotelHome.jsp"/> 
+    <put-attribute name="header" value="/hotelNav.jsp"/>   
+   </definition> 
+   
+   <definition name="lobby" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Hotel Lobby"/>   
+    <put-attribute name="body" value="/lobby.jsp"/> 
+    <put-attribute name="header" value="/hotelNav.jsp"/>   
+   </definition> 
+   
+   <definition name="getProfile" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Update Profile"/>   
+    <put-attribute name="body" value="/updateProfile.jsp"/> 
+    <put-attribute name="header" value="/userNav.jsp"/>   
+   </definition>
+
+   <definition name="getHotelBook" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Book Room"/>   
+    <put-attribute name="body" value="/roomBook.jsp"/> 
+    <put-attribute name="header" value="/userNav.jsp"/>   
+   </definition>  
+   
+   <definition name="getRoomBook" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Book Room"/>   
+    <put-attribute name="body" value="/book.jsp"/> 
+    <put-attribute name="header" value="/userNav.jsp"/>   
+   </definition> 
+   
+    <definition name="modifyRoom" template="/layoutmanager.jsp">   
+    <put-attribute name="title" value="Modify Room"/>   
+    <put-attribute name="body" value="/modifyRoom.jsp"/> 
+    <put-attribute name="header" value="/hotelNav.jsp"/>   
+   </definition> 
+                                                                     
+    </tiles-definitions>  
