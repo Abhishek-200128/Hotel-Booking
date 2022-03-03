@@ -1,5 +1,5 @@
 # Hotel-Booking
-This is a simple hotel booking project done using Java, MySQL and with struts2 as the framework. The DB details can be changed in Users.class file.
+This is a simple hotel booking project done using Java, MySQL and with struts2 as the framework. The DB details can be changed in user.java file.
 
 # Parts of Project
 There are 3 use cases in this project
